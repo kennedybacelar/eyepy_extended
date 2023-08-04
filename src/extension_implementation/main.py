@@ -38,9 +38,13 @@ def main(input_folder: str):
         if Path(single_file).suffix == ".e2e":
             e2e_files.append(single_file)
 
-        print(single_file)
-        print(type(single_file))
-        print(dir(single_file))
+    for _e2e in e2e_files:
+        final_file_path = Path(input_folder).joinpath(_e2e)
+        ev = ep.import_heyex_e2e(final_file_path)
+
+        print(ev)
+        print(type(ev))
+        print(dir(ev))
 
 
 if __name__ == "__main__":
