@@ -35,7 +35,7 @@ def main(input_folder: str):
     e2e_files = []
     all_files = os.listdir(input_folder)
     for single_file in all_files:
-        if Path(single_file).suffix == ".e2e":
+        if Path(single_file).suffix in (".e2e", ".E2E"):
             e2e_files.append(single_file)
 
     for _e2e in e2e_files:
